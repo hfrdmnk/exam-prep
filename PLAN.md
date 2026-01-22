@@ -23,14 +23,14 @@ More details in @SPEC.md
 
 ## Phase 3: Internationalization
 
-- [ ] Create translation files (`src/lib/i18n/en.ts`, `src/lib/i18n/de.ts`)
-- [ ] Create language store (`src/lib/stores/language.ts`)
+- [x] Create translation files (`src/lib/i18n/en.ts`, `src/lib/i18n/de.ts`)
+- [x] Create language store (`src/lib/stores/language.svelte.ts`)
   - Persist to localStorage (`kprime-lang`)
   - Default to browser language or English
 
 ## Phase 4: State Management
 
-- [ ] Create exam store (`src/lib/stores/exam.ts`)
+- [x] Create exam store (`src/lib/stores/exam.ts`)
   - Store imported questions
   - Track user answers per question
   - Randomize question and statement order on session start
@@ -86,5 +86,6 @@ More details in @SPEC.md
 - [x] Unit tests for scoring utility
 - [x] Unit tests for validation utility
 - [x] Unit tests for prompt generation
+- [x] Unit tests for language store
 - [ ] Component tests for key interactions
 - [ ] End-to-end flow verification
