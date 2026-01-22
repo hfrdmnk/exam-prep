@@ -92,51 +92,69 @@
 </script>
 
 {#if session && currentQuestion && currentAnswers}
-	<div class="flex flex-col gap-6 md:flex-row">
-		<!-- Main question area -->
-		<div class="flex-1">
-			<h2 class="mb-4 text-lg font-medium text-neutral-500">
-				{t.question}
-				{session.currentIndex + 1}
-				{t.of}
-				{session.questionOrder.length}
-			</h2>
+	<!-- Add bottom padding on mobile for fixed bar -->
+	<div class="pb-20 md:pb-0">
+		<div class="flex flex-col gap-6 md:flex-row">
+			<!-- Main question area -->
+			<div class="flex-1">
+				<h2 class="mb-4 text-lg font-medium text-neutral-500">
+					{t.question}
+					{session.currentIndex + 1}
+					{t.of}
+					{session.questionOrder.length}
+				</h2>
 
-			<p class="mb-6 text-lg font-medium">{currentQuestion.stem}</p>
+				<p class="mb-6 text-lg font-medium">{currentQuestion.stem}</p>
 
-			<div class="mb-6 overflow-hidden rounded-md border border-neutral-200">
-				{#each statementOrder as originalIndex, displayIndex (originalIndex)}
-					{@const statement = currentQuestion.statements[originalIndex]}
-					{@const answer = currentAnswers.answers[displayIndex]}
-					<StatementToggle
-						text={statement.text}
-						value={answer}
-						trueLabel={t.true}
-						falseLabel={t.false}
-						onchange={(value) => handleSetAnswer(displayIndex, value)}
-					/>
-				{/each}
+				<div class="mb-6 overflow-hidden rounded-md border border-neutral-200">
+					{#each statementOrder as originalIndex, displayIndex (originalIndex)}
+						{@const statement = currentQuestion.statements[originalIndex]}
+						{@const answer = currentAnswers.answers[displayIndex]}
+						<StatementToggle
+							text={statement.text}
+							value={answer}
+							trueLabel={t.true}
+							falseLabel={t.false}
+							onchange={(value) => handleSetAnswer(displayIndex, value)}
+							last={displayIndex === statementOrder.length - 1}
+						/>
+					{/each}
+				</div>
+
+				<div class="mb-6 flex justify-between">
+					<Button variant="secondary" onclick={handlePrev} disabled={isFirstQuestion}
+						>&larr;</Button
+					>
+					<Button variant="secondary" onclick={handleNext} disabled={isLastQuestion}>&rarr;</Button>
+				</div>
+
+				<Button onclick={handleFinish}>
+					{t.finishExam}
+				</Button>
 			</div>
 
-			<div class="mb-6 flex justify-between">
-				<Button variant="secondary" onclick={handlePrev} disabled={isFirstQuestion}>&larr;</Button>
-				<Button variant="secondary" onclick={handleNext} disabled={isLastQuestion}>&rarr;</Button>
+			<!-- Desktop sidebar only -->
+			<div class="hidden shrink-0 md:block md:w-56">
+				<QuestionNav
+					mode="desktop"
+					totalQuestions={session.questionOrder.length}
+					currentIndex={session.currentIndex}
+					answeredIndices={answeredIndices()}
+					onSelect={(index) => examStore.goToQuestion(index)}
+				/>
 			</div>
-
-			<Button onclick={handleFinish}>
-				{t.finishExam}
-			</Button>
 		</div>
+	</div>
 
-		<!-- Question navigator sidebar -->
-		<div class="shrink-0 md:w-56">
-			<QuestionNav
-				totalQuestions={session.questionOrder.length}
-				currentIndex={session.currentIndex}
-				answeredIndices={answeredIndices()}
-				onSelect={(index) => examStore.goToQuestion(index)}
-			/>
-		</div>
+	<!-- Mobile bottom bar -->
+	<div class="md:hidden">
+		<QuestionNav
+			mode="mobile"
+			totalQuestions={session.questionOrder.length}
+			currentIndex={session.currentIndex}
+			answeredIndices={answeredIndices()}
+			onSelect={(index) => examStore.goToQuestion(index)}
+		/>
 	</div>
 
 	<!-- Confirmation dialog -->

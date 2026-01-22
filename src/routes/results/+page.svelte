@@ -40,10 +40,10 @@
 </script>
 
 {#if session && score}
-	<h1 class="mb-8 text-2xl font-bold">{t.title}</h1>
+	<h1 class="mb-6 text-2xl font-bold md:mb-8">{t.title}</h1>
 
 	<!-- Score Card -->
-	<div class="mb-6 rounded-md border border-neutral-200 p-6 text-center">
+	<div class="animate-fade-in mb-6 rounded-md border border-neutral-200 p-6 text-center md:p-8">
 		<div class="mb-2 text-4xl font-bold">
 			{score.totalPoints} / {score.maxPoints}
 		</div>
@@ -53,7 +53,7 @@
 	</div>
 
 	<!-- Breakdown Card -->
-	<div class="mb-6 rounded-md border border-neutral-200 p-6">
+	<div class="mb-6 rounded-md border border-neutral-200 p-6 md:p-8">
 		<h2 class="mb-4 font-medium">{t.breakdown}</h2>
 		<div class="space-y-2 text-neutral-700">
 			<div class="flex justify-between">

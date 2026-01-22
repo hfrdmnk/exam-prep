@@ -7,6 +7,7 @@
 		trueLabel?: string;
 		falseLabel?: string;
 		onchange?: (value: boolean) => void;
+		last?: boolean;
 	}
 
 	let {
@@ -14,7 +15,8 @@
 		value = $bindable(null),
 		trueLabel = 'True',
 		falseLabel = 'False',
-		onchange
+		onchange,
+		last = false
 	}: Props = $props();
 
 	// Watch for changes and call onchange
@@ -25,7 +27,7 @@
 	});
 </script>
 
-<div class="flex items-center justify-between border-b border-neutral-100 p-4">
+<div class={['flex items-center justify-between p-4', !last && 'border-b border-neutral-100'].filter(Boolean).join(' ')}>
 	<span class="flex-1 pr-4">{text}</span>
 	<Toggle bind:value labels={{ true: trueLabel, false: falseLabel }} />
 </div>

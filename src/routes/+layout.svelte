@@ -13,7 +13,8 @@
 </svelte:head>
 
 <div class="min-h-screen bg-white">
-	<header class="flex justify-end p-4">
+	<header class="flex items-center justify-between px-4 py-4 md:px-6">
+		<span class="text-sm font-medium text-neutral-400">K'</span>
 		<LanguageSwitch size="sm" />
 	</header>
 	<main class="mx-auto max-w-2xl px-4 pb-8">

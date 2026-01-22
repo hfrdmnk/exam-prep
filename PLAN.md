@@ -77,7 +77,7 @@ More details in @SPEC.md
 ## Phase 7: Layout & Polish
 
 - [x] App shell in `+layout.svelte` with language toggle
-- [ ] Responsive behavior (sidebar to bottom sheet on mobile)
+- [x] Responsive behavior (sidebar to bottom sheet on mobile)
 - [x] beforeunload warning for quiz in progress
 - [x] Empty state handling (no questions, all correct)
 
@@ -88,4 +88,4 @@ More details in @SPEC.md
 - [x] Unit tests for prompt generation
 - [x] Unit tests for language store
 - [x] Component tests for key interactions
-- [ ] End-to-end flow verification
+- [x] End-to-end flow verification

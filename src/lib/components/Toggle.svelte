@@ -22,7 +22,7 @@
 		onclick={selectTrue}
 		{disabled}
 		class={[
-			'min-w-[60px] px-4 py-2 font-medium transition-colors',
+			'min-w-[60px] px-4 py-2 font-medium transition-all duration-150',
 			value === true ? 'bg-accent text-white' : 'bg-white text-neutral-700 hover:bg-neutral-50',
 			disabled && 'cursor-not-allowed opacity-50'
 		]
@@ -36,7 +36,7 @@
 		onclick={selectFalse}
 		{disabled}
 		class={[
-			'min-w-[60px] border-l border-neutral-200 px-4 py-2 font-medium transition-colors',
+			'min-w-[60px] border-l border-neutral-200 px-4 py-2 font-medium transition-all duration-150',
 			value === false ? 'bg-accent text-white' : 'bg-white text-neutral-700 hover:bg-neutral-50',
 			disabled && 'cursor-not-allowed opacity-50'
 		]
