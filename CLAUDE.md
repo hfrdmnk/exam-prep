@@ -28,6 +28,7 @@ pnpm test:unit -- --run src/path/to/file.svelte.spec.ts    # Single component te
 ## Architecture
 
 ### Tech Stack
+
 - **Svelte 5** with runes (`$state`, `$props`, `$derived`, etc.)
 - **SvelteKit** with Vercel adapter
 - **Tailwind CSS v4** (uses `@import 'tailwindcss'` syntax in CSS)
@@ -37,6 +38,7 @@ pnpm test:unit -- --run src/path/to/file.svelte.spec.ts    # Single component te
 ### Test Configuration
 
 Tests are split into two projects in `vite.config.ts`:
+
 - **client**: Browser tests for Svelte components (`*.svelte.spec.ts`) using Playwright
 - **server**: Node tests for utilities and logic (`*.spec.ts`, excluding `.svelte.spec.ts`)
 

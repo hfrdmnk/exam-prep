@@ -228,18 +228,18 @@ Bitte erkläre diese Konzepte verständlich und hilf mir zu verstehen, was ich �
 
 ```typescript
 interface ExamJSON {
-  questions: Question[];
+	questions: Question[];
 }
 
 interface Question {
-  id: number;
-  stem: string;
-  statements: Statement[];
+	id: number;
+	stem: string;
+	statements: Statement[];
 }
 
 interface Statement {
-  text: string;
-  correct: boolean;
+	text: string;
+	correct: boolean;
 }
 ```
 
@@ -286,12 +286,13 @@ Dieter Rams' principles applied to software:
 
 Define as CSS custom properties in `layout.css` for use with Tailwind's arbitrary value syntax or theme extension:
 
-| Token       | Value     | Usage                                               |
-| ----------- | --------- | --------------------------------------------------- |
-| `--accent`  | `#FF5500` | Primary actions, current state, progress indicators |
-| `--subtle`  | `#f5f5f5` | Cards, sidebar backgrounds                          |
+| Token      | Value     | Usage                                               |
+| ---------- | --------- | --------------------------------------------------- |
+| `--accent` | `#FF5500` | Primary actions, current state, progress indicators |
+| `--subtle` | `#f5f5f5` | Cards, sidebar backgrounds                          |
 
 Standard Tailwind colors to use:
+
 - Text: `text-neutral-900` (primary), `text-neutral-500` (secondary)
 - Background: `bg-white`, `bg-neutral-100` (subtle)
 - Border: `border-neutral-200`
