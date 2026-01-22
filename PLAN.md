@@ -37,12 +37,12 @@ More details in @SPEC.md
 
 ## Phase 5: Reusable Components
 
-- [ ] Button component (primary/secondary variants)
-- [ ] Input component (text, number)
-- [ ] TextArea component
-- [ ] Toggle/StatementToggle component (true/false segmented control)
-- [ ] QuestionNav component (sidebar with question status indicators)
-- [ ] LanguageSwitch component
+- [x] Button component (primary/secondary variants)
+- [x] Input component (text, number)
+- [x] TextArea component
+- [x] Toggle/StatementToggle component (true/false segmented control)
+- [x] QuestionNav component (sidebar with question status indicators)
+- [x] LanguageSwitch component
 
 ## Phase 6: Routes
 
@@ -87,5 +87,5 @@ More details in @SPEC.md
 - [x] Unit tests for validation utility
 - [x] Unit tests for prompt generation
 - [x] Unit tests for language store
-- [ ] Component tests for key interactions
+- [x] Component tests for key interactions
 - [ ] End-to-end flow verification
