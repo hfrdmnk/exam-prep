@@ -18,7 +18,7 @@
 	const sizeClasses = $derived(size === 'sm' ? 'px-2 py-1 text-sm' : 'px-3 py-2');
 </script>
 
-<div class="inline-flex rounded-md border border-neutral-200 overflow-hidden">
+<div class="inline-flex overflow-hidden rounded-md border border-neutral-200">
 	<button
 		type="button"
 		onclick={selectEn}
@@ -36,7 +36,7 @@
 		type="button"
 		onclick={selectDe}
 		class={[
-			'font-medium transition-colors border-l border-neutral-200',
+			'border-l border-neutral-200 font-medium transition-colors',
 			sizeClasses,
 			languageStore.current === 'de'
 				? 'bg-accent text-white'

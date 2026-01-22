@@ -24,7 +24,7 @@
 </script>
 
 <div class="grid grid-cols-5 gap-2">
-	{#each Array(totalQuestions) as _, i}
+	{#each Array.from({ length: totalQuestions }, (_, i) => i) as i (i)}
 		<button type="button" class={getButtonClass(i)} onclick={() => onSelect(i)}>
 			{i + 1}
 		</button>

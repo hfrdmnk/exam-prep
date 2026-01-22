@@ -48,38 +48,38 @@ More details in @SPEC.md
 
 ### Setup Screen (`/`)
 
-- [ ] Create setup form (topic, question count, language)
-- [ ] Generate and display copyable NotebookLM prompt
-- [ ] Navigate to import screen
+- [x] Create setup form (topic, question count, language)
+- [x] Generate and display copyable NotebookLM prompt
+- [x] Navigate to import screen
 
 ### Import Screen (`/import`)
 
-- [ ] JSON paste textarea
-- [ ] Validate and parse JSON on submit
-- [ ] Show clear error messages
-- [ ] Store valid exam data and navigate to quiz
+- [x] JSON paste textarea
+- [x] Validate and parse JSON on submit
+- [x] Show clear error messages
+- [x] Store valid exam data and navigate to quiz
 
 ### Quiz Screen (`/quiz`)
 
-- [ ] Display current question with 4 statement toggles
-- [ ] Question navigator sidebar
-- [ ] Track answered/unanswered state
-- [ ] Navigation between questions
-- [ ] Finish exam button with confirmation for unanswered questions
+- [x] Display current question with 4 statement toggles
+- [x] Question navigator sidebar
+- [x] Track answered/unanswered state
+- [x] Navigation between questions
+- [x] Finish exam button with confirmation for unanswered questions
 
 ### Results Screen (`/results`)
 
-- [ ] Display score (points, max, percentage)
-- [ ] Show breakdown (4pt, 2pt, 0pt questions)
-- [ ] Generate and copy review prompt for wrong answers
-- [ ] "New Exam" button to return to setup
+- [x] Display score (points, max, percentage)
+- [x] Show breakdown (4pt, 2pt, 0pt questions)
+- [x] Generate and copy review prompt for wrong answers
+- [x] "New Exam" button to return to setup
 
 ## Phase 7: Layout & Polish
 
-- [ ] App shell in `+layout.svelte` with language toggle
+- [x] App shell in `+layout.svelte` with language toggle
 - [ ] Responsive behavior (sidebar to bottom sheet on mobile)
-- [ ] beforeunload warning for quiz in progress
-- [ ] Empty state handling (no questions, all correct)
+- [x] beforeunload warning for quiz in progress
+- [x] Empty state handling (no questions, all correct)
 
 ## Phase 8: Testing & Validation
 

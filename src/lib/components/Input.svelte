@@ -28,5 +28,5 @@
 	{min}
 	{max}
 	{disabled}
-	class="px-4 py-3 rounded-md border border-neutral-200 focus:border-accent focus:outline-none w-full"
+	class="w-full rounded-md border border-neutral-200 px-4 py-3 focus:border-accent focus:outline-none"
 />

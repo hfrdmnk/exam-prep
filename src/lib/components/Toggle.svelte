@@ -16,15 +16,15 @@
 	}
 </script>
 
-<div class="inline-flex rounded-md border border-neutral-200 overflow-hidden min-h-[44px]">
+<div class="inline-flex min-h-[44px] overflow-hidden rounded-md border border-neutral-200">
 	<button
 		type="button"
 		onclick={selectTrue}
 		{disabled}
 		class={[
-			'px-4 py-2 font-medium transition-colors min-w-[60px]',
+			'min-w-[60px] px-4 py-2 font-medium transition-colors',
 			value === true ? 'bg-accent text-white' : 'bg-white text-neutral-700 hover:bg-neutral-50',
-			disabled && 'opacity-50 cursor-not-allowed'
+			disabled && 'cursor-not-allowed opacity-50'
 		]
 			.filter(Boolean)
 			.join(' ')}
@@ -36,9 +36,9 @@
 		onclick={selectFalse}
 		{disabled}
 		class={[
-			'px-4 py-2 font-medium transition-colors min-w-[60px] border-l border-neutral-200',
+			'min-w-[60px] border-l border-neutral-200 px-4 py-2 font-medium transition-colors',
 			value === false ? 'bg-accent text-white' : 'bg-white text-neutral-700 hover:bg-neutral-50',
-			disabled && 'opacity-50 cursor-not-allowed'
+			disabled && 'cursor-not-allowed opacity-50'
 		]
 			.filter(Boolean)
 			.join(' ')}

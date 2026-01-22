@@ -9,20 +9,25 @@
 		children?: Snippet;
 	}
 
-	let { variant = 'primary', type = 'button', disabled = false, onclick, children }: Props =
-		$props();
+	let {
+		variant = 'primary',
+		type = 'button',
+		disabled = false,
+		onclick,
+		children
+	}: Props = $props();
 </script>
 
 <button
 	{type}
 	{disabled}
-	onclick={onclick}
+	{onclick}
 	class={[
-		'px-4 py-3 rounded-md font-medium transition-opacity',
+		'rounded-md px-4 py-3 font-medium transition-opacity',
 		variant === 'primary'
 			? 'bg-accent text-white hover:opacity-90'
-			: 'bg-transparent border border-neutral-200 hover:bg-neutral-50',
-		disabled && 'opacity-50 cursor-not-allowed'
+			: 'border border-neutral-200 bg-transparent hover:bg-neutral-50',
+		disabled && 'cursor-not-allowed opacity-50'
 	]
 		.filter(Boolean)
 		.join(' ')}

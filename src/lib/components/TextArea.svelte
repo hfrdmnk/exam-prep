@@ -14,5 +14,5 @@
 	{placeholder}
 	{rows}
 	{disabled}
-	class="px-4 py-3 rounded-md border border-neutral-200 focus:border-accent focus:outline-none w-full resize-y"
+	class="w-full resize-y rounded-md border border-neutral-200 px-4 py-3 focus:border-accent focus:outline-none"
 ></textarea>
