@@ -1,42 +1,65 @@
-# sv
+# K' Exam Prep Tool
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimal SvelteKit application for K-prime exam preparation. Generates prompts for NotebookLM to create exam questions from your sources, then runs quiz sessions with delayed feedback for active recall.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Prompt generation** for NotebookLM to create K-prime questions from any topic
+- **K-prime format** — 4 statements per question, each marked true/false
+- **Delayed feedback** — no answers shown during quiz to support genuine recall
+- **Review prompts** — generate targeted review prompts for questions you got wrong
+- **Bilingual** — full support for English and German
 
-```sh
-# create a new project
-npx sv create my-app
+## How It Works
+
+1. **Setup** — Enter your topic and number of questions, select language
+2. **Generate** — Copy the generated prompt to NotebookLM with your sources
+3. **Import** — Paste the JSON response from NotebookLM
+4. **Quiz** — Answer questions without feedback (randomized order)
+5. **Review** — See your score and generate a review prompt for missed questions
+
+## Tech Stack
+
+- **Svelte 5** with runes (`$state`, `$props`, `$derived`)
+- **SvelteKit** with Vercel adapter
+- **Tailwind CSS v4**
+- **TypeScript** in strict mode
+- **Vitest** for testing
+
+## Development
+
+```bash
+pnpm install    # Install dependencies
+pnpm dev        # Start dev server
+pnpm build      # Production build
+pnpm check      # Type-check
+pnpm lint       # Run prettier + eslint
+pnpm format     # Auto-format
+pnpm test       # Run all tests
 ```
 
-To recreate this project with the same configuration:
+## Project Structure
 
-```sh
-# recreate this project
-pnpm dlx sv create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" tailwindcss="plugins:forms,typography" sveltekit-adapter="adapter:vercel" --install pnpm exam-prep
+```
+src/
+├── lib/
+│   ├── components/     # Reusable UI components
+│   ├── stores/         # Svelte stores (exam state, i18n)
+│   ├── i18n/           # Translation files (en.ts, de.ts)
+│   ├── utils/          # scoring.ts, prompts.ts, validation.ts
+│   └── types.ts        # TypeScript interfaces
+├── routes/
+│   ├── +layout.svelte  # App shell
+│   ├── +page.svelte    # Setup screen (/)
+│   ├── import/         # JSON input (/import)
+│   ├── quiz/           # Quiz interface (/quiz)
+│   └── results/        # Results & review (/results)
 ```
 
-## Developing
+## K-Prime Scoring
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+| Correct Answers | Points |
+| --------------- | ------ |
+| 4/4             | 4      |
+| 3/4             | 2      |
+| 2 or fewer      | 0      |

@@ -1,5 +1,7 @@
 # K' Exam Prep Tool — Implementation Plan
 
+More details in @SPEC.md
+
 ## Phase 1: Foundation
 
 - [ ] Set up project structure (directories for components, stores, utils, i18n)
@@ -45,17 +47,20 @@
 ## Phase 6: Routes
 
 ### Setup Screen (`/`)
+
 - [ ] Create setup form (topic, question count, language)
 - [ ] Generate and display copyable NotebookLM prompt
 - [ ] Navigate to import screen
 
 ### Import Screen (`/import`)
+
 - [ ] JSON paste textarea
 - [ ] Validate and parse JSON on submit
 - [ ] Show clear error messages
 - [ ] Store valid exam data and navigate to quiz
 
 ### Quiz Screen (`/quiz`)
+
 - [ ] Display current question with 4 statement toggles
 - [ ] Question navigator sidebar
 - [ ] Track answered/unanswered state
@@ -63,6 +68,7 @@
 - [ ] Finish exam button with confirmation for unanswered questions
 
 ### Results Screen (`/results`)
+
 - [ ] Display score (points, max, percentage)
 - [ ] Show breakdown (4pt, 2pt, 0pt questions)
 - [ ] Generate and copy review prompt for wrong answers
