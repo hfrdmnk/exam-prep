@@ -4,20 +4,20 @@ More details in @SPEC.md
 
 ## Phase 1: Foundation
 
-- [ ] Set up project structure (directories for components, stores, utils, i18n)
-- [ ] Define TypeScript types in `src/lib/types.ts` (ExamJSON, Question, Statement, QuestionState)
-- [ ] Create CSS custom properties (`--accent`, `--subtle`) in layout styles
+- [x] Set up project structure (directories for components, stores, utils, i18n)
+- [x] Define TypeScript types in `src/lib/types.ts` (ExamJSON, Question, Statement, QuestionState)
+- [x] Create CSS custom properties (`--accent`, `--subtle`) in layout styles
 
 ## Phase 2: Core Utilities
 
-- [ ] Implement JSON validation utility (`src/lib/utils/validation.ts`)
+- [x] Implement JSON validation utility (`src/lib/utils/validation.ts`)
   - Extract JSON from markdown code blocks
   - Validate structure (questions array, 4 statements per question)
   - Return clear error messages
-- [ ] Implement scoring utility (`src/lib/utils/scoring.ts`)
+- [x] Implement scoring utility (`src/lib/utils/scoring.ts`)
   - Calculate points per question (4/4=4pts, 3/4=2pts, else=0)
   - Calculate total score and percentage
-- [ ] Implement prompt generation utility (`src/lib/utils/prompts.ts`)
+- [x] Implement prompt generation utility (`src/lib/utils/prompts.ts`)
   - Generate NotebookLM prompt (EN/DE templates)
   - Generate review prompt for wrong answers
 
@@ -83,8 +83,8 @@ More details in @SPEC.md
 
 ## Phase 8: Testing & Validation
 
-- [ ] Unit tests for scoring utility
-- [ ] Unit tests for validation utility
-- [ ] Unit tests for prompt generation
+- [x] Unit tests for scoring utility
+- [x] Unit tests for validation utility
+- [x] Unit tests for prompt generation
 - [ ] Component tests for key interactions
 - [ ] End-to-end flow verification
