@@ -6,7 +6,7 @@ const examPromptEN = `You are an exam question generator. Create exactly {count}
 
 REQUIREMENTS:
 - Each question has exactly 4 statements that are either true or false
-- Vary the number of true/false statements per question (0-4 true is valid, not always 2+2)
+- CRITICAL: Vary the number of true statements per question — use the full range (0, 1, 2, 3, or 4 true statements). Do NOT cluster around any single pattern.
 - Draw questions from ALL different areas of the provided sources — ensure broad coverage
 - Balance the difficulty:
   - ~40% nuanced questions requiring detailed knowledge
@@ -22,11 +22,51 @@ Return ONLY a JSON code block. No introduction, no explanation, no text outside 
   "questions": [
     {
       "id": 1,
-      "stem": "The question stem or scenario",
+      "stem": "Example with 2 true statements",
+      "statements": [
+        { "text": "First statement", "correct": true },
+        { "text": "Second statement", "correct": false },
+        { "text": "Third statement", "correct": true },
+        { "text": "Fourth statement", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "stem": "Example with 4 true statements",
       "statements": [
         { "text": "First statement", "correct": true },
         { "text": "Second statement", "correct": true },
         { "text": "Third statement", "correct": true },
+        { "text": "Fourth statement", "correct": true }
+      ]
+    },
+    {
+      "id": 3,
+      "stem": "Example with 0 true statements",
+      "statements": [
+        { "text": "First statement", "correct": false },
+        { "text": "Second statement", "correct": false },
+        { "text": "Third statement", "correct": false },
+        { "text": "Fourth statement", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "stem": "Example with 3 true statements",
+      "statements": [
+        { "text": "First statement", "correct": true },
+        { "text": "Second statement", "correct": true },
+        { "text": "Third statement", "correct": false },
+        { "text": "Fourth statement", "correct": true }
+      ]
+    },
+    {
+      "id": 5,
+      "stem": "Example with 1 true statement",
+      "statements": [
+        { "text": "First statement", "correct": false },
+        { "text": "Second statement", "correct": true },
+        { "text": "Third statement", "correct": false },
         { "text": "Fourth statement", "correct": false }
       ]
     }
@@ -40,7 +80,7 @@ const examPromptDE = `Du bist ein Prüfungsfragen-Generator. Erstelle genau {cou
 
 ANFORDERUNGEN:
 - Jede Frage hat genau 4 Aussagen, die entweder wahr oder falsch sind
-- Variiere die Anzahl der wahren/falschen Aussagen pro Frage (0-4 wahr ist gültig, nicht immer 2+2)
+- KRITISCH: Variiere die Anzahl der wahren Aussagen pro Frage — nutze die volle Bandbreite (0, 1, 2, 3 oder 4 wahre Aussagen). NICHT auf ein Muster festlegen.
 - Ziehe Fragen aus ALLEN verschiedenen Bereichen der bereitgestellten Quellen — stelle eine breite Abdeckung sicher (querbeet)
 - Ausgewogene Schwierigkeit:
   - ~40% Detailfragen, die tiefes Wissen erfordern
@@ -56,11 +96,51 @@ Gib NUR einen JSON-Codeblock zurück. Keine Einleitung, keine Erklärung, kein T
   "questions": [
     {
       "id": 1,
-      "stem": "Die Fragestellung oder das Szenario",
+      "stem": "Beispiel mit 2 wahren Aussagen",
+      "statements": [
+        { "text": "Erste Aussage", "correct": true },
+        { "text": "Zweite Aussage", "correct": false },
+        { "text": "Dritte Aussage", "correct": true },
+        { "text": "Vierte Aussage", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "stem": "Beispiel mit 4 wahren Aussagen",
       "statements": [
         { "text": "Erste Aussage", "correct": true },
         { "text": "Zweite Aussage", "correct": true },
         { "text": "Dritte Aussage", "correct": true },
+        { "text": "Vierte Aussage", "correct": true }
+      ]
+    },
+    {
+      "id": 3,
+      "stem": "Beispiel mit 0 wahren Aussagen",
+      "statements": [
+        { "text": "Erste Aussage", "correct": false },
+        { "text": "Zweite Aussage", "correct": false },
+        { "text": "Dritte Aussage", "correct": false },
+        { "text": "Vierte Aussage", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "stem": "Beispiel mit 3 wahren Aussagen",
+      "statements": [
+        { "text": "Erste Aussage", "correct": true },
+        { "text": "Zweite Aussage", "correct": true },
+        { "text": "Dritte Aussage", "correct": false },
+        { "text": "Vierte Aussage", "correct": true }
+      ]
+    },
+    {
+      "id": 5,
+      "stem": "Beispiel mit 1 wahren Aussage",
+      "statements": [
+        { "text": "Erste Aussage", "correct": false },
+        { "text": "Zweite Aussage", "correct": true },
+        { "text": "Dritte Aussage", "correct": false },
         { "text": "Vierte Aussage", "correct": false }
       ]
     }
