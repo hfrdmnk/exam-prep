@@ -22,52 +22,12 @@ Return ONLY a JSON code block. No introduction, no explanation, no text outside 
   "questions": [
     {
       "id": 1,
-      "stem": "Example with 2 true statements",
+      "stem": "Question text describing the scenario",
       "statements": [
-        { "text": "First statement", "correct": true },
-        { "text": "Second statement", "correct": false },
-        { "text": "Third statement", "correct": true },
-        { "text": "Fourth statement", "correct": false }
-      ]
-    },
-    {
-      "id": 2,
-      "stem": "Example with 4 true statements",
-      "statements": [
-        { "text": "First statement", "correct": true },
-        { "text": "Second statement", "correct": true },
-        { "text": "Third statement", "correct": true },
-        { "text": "Fourth statement", "correct": true }
-      ]
-    },
-    {
-      "id": 3,
-      "stem": "Example with 0 true statements",
-      "statements": [
-        { "text": "First statement", "correct": false },
-        { "text": "Second statement", "correct": false },
-        { "text": "Third statement", "correct": false },
-        { "text": "Fourth statement", "correct": false }
-      ]
-    },
-    {
-      "id": 4,
-      "stem": "Example with 3 true statements",
-      "statements": [
-        { "text": "First statement", "correct": true },
-        { "text": "Second statement", "correct": true },
-        { "text": "Third statement", "correct": false },
-        { "text": "Fourth statement", "correct": true }
-      ]
-    },
-    {
-      "id": 5,
-      "stem": "Example with 1 true statement",
-      "statements": [
-        { "text": "First statement", "correct": false },
-        { "text": "Second statement", "correct": true },
-        { "text": "Third statement", "correct": false },
-        { "text": "Fourth statement", "correct": false }
+        { "text": "First statement", "correct": <boolean> },
+        { "text": "Second statement", "correct": <boolean> },
+        { "text": "Third statement", "correct": <boolean> },
+        { "text": "Fourth statement", "correct": <boolean> }
       ]
     }
   ]
@@ -96,52 +56,12 @@ Gib NUR einen JSON-Codeblock zurück. Keine Einleitung, keine Erklärung, kein T
   "questions": [
     {
       "id": 1,
-      "stem": "Beispiel mit 2 wahren Aussagen",
+      "stem": "Fragentext, der das Szenario beschreibt",
       "statements": [
-        { "text": "Erste Aussage", "correct": true },
-        { "text": "Zweite Aussage", "correct": false },
-        { "text": "Dritte Aussage", "correct": true },
-        { "text": "Vierte Aussage", "correct": false }
-      ]
-    },
-    {
-      "id": 2,
-      "stem": "Beispiel mit 4 wahren Aussagen",
-      "statements": [
-        { "text": "Erste Aussage", "correct": true },
-        { "text": "Zweite Aussage", "correct": true },
-        { "text": "Dritte Aussage", "correct": true },
-        { "text": "Vierte Aussage", "correct": true }
-      ]
-    },
-    {
-      "id": 3,
-      "stem": "Beispiel mit 0 wahren Aussagen",
-      "statements": [
-        { "text": "Erste Aussage", "correct": false },
-        { "text": "Zweite Aussage", "correct": false },
-        { "text": "Dritte Aussage", "correct": false },
-        { "text": "Vierte Aussage", "correct": false }
-      ]
-    },
-    {
-      "id": 4,
-      "stem": "Beispiel mit 3 wahren Aussagen",
-      "statements": [
-        { "text": "Erste Aussage", "correct": true },
-        { "text": "Zweite Aussage", "correct": true },
-        { "text": "Dritte Aussage", "correct": false },
-        { "text": "Vierte Aussage", "correct": true }
-      ]
-    },
-    {
-      "id": 5,
-      "stem": "Beispiel mit 1 wahren Aussage",
-      "statements": [
-        { "text": "Erste Aussage", "correct": false },
-        { "text": "Zweite Aussage", "correct": true },
-        { "text": "Dritte Aussage", "correct": false },
-        { "text": "Vierte Aussage", "correct": false }
+        { "text": "Erste Aussage", "correct": <boolean> },
+        { "text": "Zweite Aussage", "correct": <boolean> },
+        { "text": "Dritte Aussage", "correct": <boolean> },
+        { "text": "Vierte Aussage", "correct": <boolean> }
       ]
     }
   ]
