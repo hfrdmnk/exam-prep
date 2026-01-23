@@ -5,8 +5,8 @@ type CorrectAnswers = [boolean, boolean, boolean, boolean];
 
 /**
  * Score a single K-prime question.
- * 4/4 correct = 4 points
- * 3/4 correct = 2 points
+ * 4/4 correct = 2 points
+ * 3/4 correct = 1 point
  * ≤2/4 correct = 0 points
  * null answers count as wrong.
  */
@@ -19,8 +19,8 @@ export function scoreQuestion(answers: Answers, correct: CorrectAnswers): number
 		}
 	}
 
-	if (correctCount === 4) return 4;
-	if (correctCount === 3) return 2;
+	if (correctCount === 4) return 2;
+	if (correctCount === 3) return 1;
 	return 0;
 }
 
@@ -34,9 +34,9 @@ export function scoreExam(
 	totalPoints: number;
 	maxPoints: number;
 	percentage: number;
-	breakdown: { fourPoints: number; twoPoints: number; zeroPoints: number };
+	breakdown: { twoPoints: number; onePoint: number; zeroPoints: number };
 } {
-	const breakdown = { fourPoints: 0, twoPoints: 0, zeroPoints: 0 };
+	const breakdown = { twoPoints: 0, onePoint: 0, zeroPoints: 0 };
 	let totalPoints = 0;
 
 	for (const question of exam.questions) {
@@ -47,19 +47,19 @@ export function scoreExam(
 		const score = scoreQuestion(answers, correct);
 		totalPoints += score;
 
-		if (score === 4) breakdown.fourPoints++;
-		else if (score === 2) breakdown.twoPoints++;
+		if (score === 2) breakdown.twoPoints++;
+		else if (score === 1) breakdown.onePoint++;
 		else breakdown.zeroPoints++;
 	}
 
-	const maxPoints = exam.questions.length * 4;
+	const maxPoints = exam.questions.length * 2;
 	const percentage = maxPoints > 0 ? Math.round((totalPoints / maxPoints) * 100) : 0;
 
 	return { totalPoints, maxPoints, percentage, breakdown };
 }
 
 /**
- * Get questions that scored less than 4 points (for review).
+ * Get questions that scored less than 2 points (for review).
  */
 export function getWrongQuestions(
 	exam: ExamJSON,
@@ -75,7 +75,7 @@ export function getWrongQuestions(
 		const correct = question.statements.map((s) => s.correct) as CorrectAnswers;
 		const score = scoreQuestion(state.answers, correct);
 
-		if (score < 4) {
+		if (score < 2) {
 			result.push({ question, state, score });
 		}
 	}

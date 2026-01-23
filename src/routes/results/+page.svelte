@@ -58,11 +58,11 @@
 		<div class="space-y-2 text-neutral-700">
 			<div class="flex justify-between">
 				<span>{t.perfect}</span>
-				<span>{score.breakdown.fourPoints} {t.questions}</span>
+				<span>{score.breakdown.twoPoints} {t.questions}</span>
 			</div>
 			<div class="flex justify-between">
 				<span>{t.partial}</span>
-				<span>{score.breakdown.twoPoints} {t.questions}</span>
+				<span>{score.breakdown.onePoint} {t.questions}</span>
 			</div>
 			<div class="flex justify-between">
 				<span>{t.failed}</span>

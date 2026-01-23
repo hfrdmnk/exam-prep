@@ -105,7 +105,8 @@ describe('examStore', () => {
 			expect.assertions(1);
 			examStore.startSession(mockExam);
 
-			expect(examStore.currentAnswers).toBe(examStore.session!.answers[0]);
+			const originalIndex = examStore.session!.questionOrder[0].originalIndex;
+			expect(examStore.currentAnswers).toBe(examStore.session!.answers[originalIndex]);
 		});
 	});
 
@@ -230,9 +231,9 @@ describe('examStore', () => {
 				}
 			}
 
-			// All answers should be correct (4 points per question = 8 points total)
+			// All answers should be correct (2 points per question = 4 points total)
 			const score = scoreExam(examStore.session!.exam, examStore.session!.answers);
-			expect(score.totalPoints).toBe(8);
+			expect(score.totalPoints).toBe(4);
 		});
 	});
 });
