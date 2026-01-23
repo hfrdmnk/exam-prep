@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { examStore } from './exam.svelte';
 import type { ExamJSON } from '$lib/types';
+import { scoreExam } from '$lib/utils/scoring';
 
 const mockExam: ExamJSON = {
 	questions: [
@@ -206,6 +207,32 @@ describe('examStore', () => {
 			examStore.startSession(mockExam);
 			examStore.reset();
 			expect(examStore.session).toBeNull();
+		});
+	});
+
+	describe('answer indexing with shuffled statements', () => {
+		it('scores correctly when answers are stored by original index regardless of statement order', () => {
+			expect.assertions(1);
+			examStore.startSession(mockExam);
+
+			// For each question, answer according to the ORIGINAL statement indices
+			// This simulates what the fixed quiz page does: handleSetAnswer(originalIndex, value)
+			for (let qIdx = 0; qIdx < examStore.session!.questionOrder.length; qIdx++) {
+				examStore.goToQuestion(qIdx);
+				const shuffledQ = examStore.session!.questionOrder[qIdx];
+				const question = examStore.session!.exam.questions[shuffledQ.originalIndex];
+
+				// Iterate through display order, but SET answers at originalIndex
+				for (const originalIndex of shuffledQ.statementOrder) {
+					// Answer correctly: set the answer to match statement.correct
+					const correctValue = question.statements[originalIndex].correct;
+					examStore.setAnswer(originalIndex, correctValue);
+				}
+			}
+
+			// All answers should be correct (4 points per question = 8 points total)
+			const score = scoreExam(examStore.session!.exam, examStore.session!.answers);
+			expect(score.totalPoints).toBe(8);
 		});
 	});
 });

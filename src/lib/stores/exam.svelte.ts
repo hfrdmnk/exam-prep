@@ -41,7 +41,8 @@ export const examStore = {
 
 	get currentAnswers(): QuestionState | null {
 		if (!session) return null;
-		return session.answers[session.currentIndex];
+		const originalIndex = session.questionOrder[session.currentIndex].originalIndex;
+		return session.answers[originalIndex];
 	},
 
 	get isComplete(): boolean {
@@ -60,7 +61,8 @@ export const examStore = {
 
 	setAnswer(statementIndex: number, value: boolean): void {
 		if (!session) return;
-		session.answers[session.currentIndex].answers[statementIndex] = value;
+		const originalIndex = session.questionOrder[session.currentIndex].originalIndex;
+		session.answers[originalIndex].answers[statementIndex] = value;
 	},
 
 	goToQuestion(index: number): void {

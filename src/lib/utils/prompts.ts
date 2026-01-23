@@ -6,6 +6,7 @@ const examPromptEN = `You are an exam question generator. Create exactly {count}
 
 REQUIREMENTS:
 - Each question has exactly 4 statements that are either true or false
+- Vary the number of true/false statements per question (0-4 true is valid, not always 2+2)
 - Draw questions from ALL different areas of the provided sources — ensure broad coverage
 - Balance the difficulty:
   - ~40% nuanced questions requiring detailed knowledge
@@ -24,7 +25,7 @@ Return ONLY a JSON code block. No introduction, no explanation, no text outside 
       "stem": "The question stem or scenario",
       "statements": [
         { "text": "First statement", "correct": true },
-        { "text": "Second statement", "correct": false },
+        { "text": "Second statement", "correct": true },
         { "text": "Third statement", "correct": true },
         { "text": "Fourth statement", "correct": false }
       ]
@@ -39,6 +40,7 @@ const examPromptDE = `Du bist ein Prüfungsfragen-Generator. Erstelle genau {cou
 
 ANFORDERUNGEN:
 - Jede Frage hat genau 4 Aussagen, die entweder wahr oder falsch sind
+- Variiere die Anzahl der wahren/falschen Aussagen pro Frage (0-4 wahr ist gültig, nicht immer 2+2)
 - Ziehe Fragen aus ALLEN verschiedenen Bereichen der bereitgestellten Quellen — stelle eine breite Abdeckung sicher (querbeet)
 - Ausgewogene Schwierigkeit:
   - ~40% Detailfragen, die tiefes Wissen erfordern
@@ -57,7 +59,7 @@ Gib NUR einen JSON-Codeblock zurück. Keine Einleitung, keine Erklärung, kein T
       "stem": "Die Fragestellung oder das Szenario",
       "statements": [
         { "text": "Erste Aussage", "correct": true },
-        { "text": "Zweite Aussage", "correct": false },
+        { "text": "Zweite Aussage", "correct": true },
         { "text": "Dritte Aussage", "correct": true },
         { "text": "Vierte Aussage", "correct": false }
       ]

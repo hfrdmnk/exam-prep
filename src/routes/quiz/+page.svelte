@@ -42,8 +42,8 @@
 		session ? session.currentIndex === session.questionOrder.length - 1 : true
 	);
 
-	function handleSetAnswer(displayIndex: number, value: boolean) {
-		examStore.setAnswer(displayIndex, value);
+	function handleSetAnswer(statementIndex: number, value: boolean) {
+		examStore.setAnswer(statementIndex, value);
 	}
 
 	function handlePrev() {
@@ -109,21 +109,20 @@
 				<div class="mb-6 overflow-hidden rounded-md border border-neutral-200">
 					{#each statementOrder as originalIndex, displayIndex (originalIndex)}
 						{@const statement = currentQuestion.statements[originalIndex]}
-						{@const answer = currentAnswers.answers[displayIndex]}
+						{@const answer = currentAnswers.answers[originalIndex]}
 						<StatementToggle
 							text={statement.text}
 							value={answer}
 							trueLabel={t.true}
 							falseLabel={t.false}
-							onchange={(value) => handleSetAnswer(displayIndex, value)}
+							onchange={(value) => handleSetAnswer(originalIndex, value)}
 							last={displayIndex === statementOrder.length - 1}
 						/>
 					{/each}
 				</div>
 
 				<div class="mb-6 flex justify-between">
-					<Button variant="secondary" onclick={handlePrev} disabled={isFirstQuestion}
-						>&larr;</Button
+					<Button variant="secondary" onclick={handlePrev} disabled={isFirstQuestion}>&larr;</Button
 					>
 					<Button variant="secondary" onclick={handleNext} disabled={isLastQuestion}>&rarr;</Button>
 				</div>

@@ -27,7 +27,11 @@
 	});
 </script>
 
-<div class={['flex items-center justify-between p-4', !last && 'border-b border-neutral-100'].filter(Boolean).join(' ')}>
+<div
+	class={['flex items-center justify-between p-4', !last && 'border-b border-neutral-100']
+		.filter(Boolean)
+		.join(' ')}
+>
 	<span class="flex-1 pr-4">{text}</span>
 	<Toggle bind:value labels={{ true: trueLabel, false: falseLabel }} />
 </div>

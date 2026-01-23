@@ -50,7 +50,7 @@
 	</div>
 {:else}
 	<!-- Mobile: fixed bottom bar with collapsed/expanded states -->
-	<div class="fixed bottom-0 left-0 right-0 border-t border-neutral-200 bg-white">
+	<div class="fixed right-0 bottom-0 left-0 border-t border-neutral-200 bg-white">
 		{#if expanded}
 			<!-- Expanded grid overlay -->
 			<div class="p-4">

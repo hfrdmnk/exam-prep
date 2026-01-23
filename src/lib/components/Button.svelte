@@ -23,7 +23,7 @@
 	{disabled}
 	{onclick}
 	class={[
-		'rounded-md px-4 py-3 font-medium transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
+		'rounded-md px-4 py-3 font-medium transition-opacity focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:outline-none',
 		variant === 'primary'
 			? 'bg-accent text-white hover:opacity-90'
 			: 'border border-neutral-200 bg-transparent hover:bg-neutral-50',
